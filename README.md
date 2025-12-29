@@ -1,25 +1,16 @@
-📌 NexTask – Flutter Task Management App
+📌 NexTask – Flutter Task Management App 
 📖 Overview
 
-NexTask is a modern, mobile-only task management application built using Flutter (Dart) and Firebase.
-The app helps users organize daily tasks efficiently with a clean user interface, real-time updates, and secure authentication.
+NexTask is a mobile-only task management application built using Flutter (Dart).
+This version is frontend-only, with all task data stored locally in memory.
+It demonstrates clean UI/UX design, smooth navigation, and local state management for task handling.
 
-NexTask is designed as an MVP-level productivity app, focusing on simplicity, usability, and scalability.
+The app is perfect for prototyping, portfolio projects, or internship demonstrations.
 
 🚀 Features
-🔐 Authentication
+📝 Task Management (Local)
 
-User Sign Up
-
-User Login
-
-Secure Firebase Authentication
-
-User-specific task access
-
-📝 Task Management
-
-Add new tasks with scheduled time
+Add new tasks with a title and scheduled time
 
 View all tasks in a single dashboard
 
@@ -27,116 +18,87 @@ Mark tasks as completed
 
 Delete tasks
 
-Real-time task updates using Firestore
+Tasks are stored in local state (memory) without a backend
 
 🎨 UI & UX
 
-Clean and minimal Material UI
+Minimal, modern design using Material Design
 
 Custom color palette:
 
-#604652 (Primary)
+Primary: #604652
 
-#735557 (Secondary)
+Secondary: #735557
 
-#97866A (Accent)
+Accent: #97866A
 
-#D29F8F (Background)
+Background: #D29F8F
 
-Smooth navigation and intuitive user flow
+Smooth navigation between screens
+
+Validation messages for inputs
+
+Responsive UI elements for mobile screens
 
 🛠️ Tech Stack
 Technology	Usage
-Flutter	Mobile UI Framework
-Dart	Programming Language
-Firebase Authentication	User Authentication
-Cloud Firestore	Real-time Database
-Material Design	UI Components
+Flutter	Mobile UI framework
+Dart	Programming language
+Material Design	UI components
+Local state (setState / Provider / Riverpod)	Task management
 📱 App Flow
 
-Splash / Welcome Screen
+Splash / Welcome Screen – Shows app name and login button
 
-Login Screen
+Login Screen – Username/email + password input, navigates to dashboard
 
-Sign Up Screen
+Sign Up Screen – Username, password, confirm password, navigates to dashboard
 
-Task Dashboard
+Task Dashboard – Displays task list, allows adding, completing, and deleting tasks
 
-Add / Complete / Delete Tasks
-
-Each user can only manage their own tasks securely.
-
-🗂️ Database Structure (Firestore)
-users (collection)
- └── userId (document)
-     ├── username: string
-     └── createdAt: timestamp
-
-tasks (collection)
- └── taskId (document)
-     ├── userId: string
-     ├── title: string
-     ├── scheduledTime: timestamp
-     ├── status: "todo" | "completed"
-     └── createdAt: timestamp
-
-🔐 Security
-
-Firebase Authentication required for all operations
-
-Firestore rules ensure users access only their own tasks
-
-Real-time updates with secure read/write permissions
+Add Task Modal/Screen – Input task title and scheduled time
 
 ⚙️ Setup Instructions
 
-Clone the repository
+Clone the repository:
 
-git clone https://github.com/your-username/nextask.git
+git clone https://github.com/your-username/nextask-frontend.git
 
 
 Open the project in Android Studio or VS Code
 
-Create a Firebase project
-
-Enable:
-
-Email/Password Authentication
-
-Cloud Firestore
-
-Add google-services.json to the Android app
-
-Run the app:
+Get dependencies:
 
 flutter pub get
+
+
+Run the app on a simulator or device:
+
 flutter run
 
 🎯 Purpose
 
-This project was developed to:
+Practice Flutter UI development and mobile design
 
-Practice Flutter mobile development
+Implement local state management for tasks
 
-Implement Firebase Authentication and Firestore
-
-Build a real-world task management application
-
-Serve as a portfolio and internship-ready project
+Build a portfolio-ready frontend application
 
 📌 Future Enhancements
 
-Task priority levels
+Connect to Firebase or another backend for persistent storage
 
-Task editing
+Add task priority levels
+
+Add task editing
 
 Push notifications
 
-Dark mode
+Dark mode option
 
 Offline support
 
 👤 Author
 
-Sanduni Vidusha
+Vidusha Puswalkatiya |
 Flutter Mobile Developer
