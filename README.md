@@ -1,104 +1,110 @@
-# 📌 NexTask – Flutter Task Management App 
+# 📌 NexTask – Full-Stack Task Management App
 
 ## 📖 Overview
 
-**NexTask** is a **mobile-only task management application** built using **Flutter (Dart)**.
-This version is **frontend-only**, with all task data stored locally in memory.
-It demonstrates clean **UI/UX design**, smooth navigation, and **local state management** for task handling.
+**NexTask** is a premium, full-stack task management application designed for modern efficiency. It combines a high-performance **Flutter** mobile experience with a robust **Node.js & MongoDB** backend.
 
-The app is perfect for **prototyping, portfolio projects, or internship demonstrations**.
+Unlike basic task apps, NexTask features real-time synchronization, advanced task categorization (Ongoing, Pending, Ended), a dedicated focus timer (Stopwatch), and a database-integrated notification system.
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-### 📝 Task Management (Local)
+### � Advanced Task Management
+* **Categorized Workflow**: Organize tasks into **Ongoing**, **Pending**, and **Ended** sections.
+* **Full CRUD**: Create, Read, Update, and Delete tasks with instant cloud sync.
+* **Smart Search**: Real-time task filtering directly from the dashboard.
+* **Quick Status Toggle**: Mark tasks as ongoing or completed with a single tap.
 
-* Add new tasks with a title and scheduled time
-* View all tasks in a single dashboard
-* Mark tasks as completed
-* Delete tasks
-* Tasks are stored in local state (memory) without a backend
+### ⏱️ Time Tracking (Stopwatch)
+* **Dedicated Timer**: Track exactly how much time you spend on each task.
+* **Mini Dashboard Widget**: Access a focus timer without leaving your main view.
+* **Backend Persistance**: Total time spent is synced to your profile.
 
-### 🎨 UI & UX
+### 🔔 Integrated Notification System
+* **Alerts & Reminders**: Get notified about upcoming deadlines and overdue tasks.
+* **Sync with Backend**: Notifications are stored in the database, allowing for cross-device visibility.
+* **Read Status**: Track and manage your notification history.
 
-* Minimal, modern design using **Material Design**
-* Custom color palette:
+### 🔐 Secure Authentication
+* **JWT-Based Login**: Industry-standard secure authentication.
+* **User Profiles**: Personalized experience with profile customization and theme settings.
 
-  * Primary: `#604652`
-  * Secondary: `#735557`
-  * Accent: `#97866A`
-  * Background: `#D29F8F`
-* Smooth navigation between screens
-* Validation messages for inputs
-* Responsive UI elements for mobile screens
-
----
-
-## 🛠️ Tech Stack
-
-| Technology                                     | Usage                |
-| ---------------------------------------------- | -------------------- |
-| Flutter                                        | Mobile UI framework  |
-| Dart                                           | Programming language |
-| Material Design                                | UI components        |
-| Local state (`setState` / Provider / Riverpod) | Task management      |
+### 🎨 Premium UI/UX
+* **Modern Material 3**: Beautiful, responsive design with smooth micro-animations.
+* **Adaptive Theme**: One-tap toggle between **Light** and **Dark** modes.
+* **Glassmorphism Elements**: Sleek, modern aesthetics for a premium feel.
 
 ---
 
-## 📱 App Flow
+## 🛠️ Architechture & Tech Stack
 
-1. **Splash / Welcome Screen** – Shows app name and login button
-2. **Login Screen** – Username/email + password input, navigates to dashboard
-3. **Sign Up Screen** – Username, password, confirm password, navigates to dashboard
-4. **Task Dashboard** – Displays task list, allows adding, completing, and deleting tasks
-5. **Add Task Modal/Screen** – Input task title and scheduled time
+### Frontend (Mobile)
+* **Framework**: Flutter
+* **Language**: Dart
+* **State Management**: Provider
+* **Networking**: HTTP for REST API consumption
+
+### Backend (Server)
+* **Runtime**: Node.js
+* **Framework**: Express.js
+* **Database**: MongoDB Atlas (Cloud)
+* **Security**: JWT & Bcrypt.js
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ Setup & Installation
 
-1. Clone the repository:
+### 1. Prerequisities
+- Flutter SDK installed
+- Node.js installed
+- MongoDB Atlas account (or local MongoDB)
 
+### 2. Backend Setup
+1. Navigate to the `backend` directory:
    ```bash
-   git clone https://github.com/viduz19/NexTask.git
+   cd backend
    ```
-2. Open the project in **Android Studio** or **VS Code**
-3. Get dependencies:
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the `backend` folder:
+   ```env
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_secret_key
+   ```
+4. Start the server:
+   ```bash
+   npm start
+   ```
 
+### 3. Frontend Setup
+1. From the project root, install Flutter packages:
    ```bash
    flutter pub get
    ```
-4. Run the app on a simulator or device:
-
+2. Update the `baseUrl` in `lib/services/api_service.dart` if running on a real device.
+3. Run the app:
    ```bash
    flutter run
    ```
 
 ---
 
-## 🎯 Purpose
-
-* Practice Flutter UI development and mobile design
-* Implement **local state management** for tasks
-* Build a **portfolio-ready frontend application**
-
----
-
-## 📌 Future Enhancements
-
-* Connect to Firebase or another backend for persistent storage
-* Add task priority levels
-* Add task editing
-* Push notifications
-* Dark mode option
-* Offline support
+## 🎯 Project Goals
+* Demonstrate full-stack integration for mobile applications.
+* Implement professional-grade authentication and data persistence.
+* Showcase advanced UI concepts and efficient state management.
 
 ---
 
 ## 👤 Author
 
 **Vidusha Puswalkatiya**
-Flutter Mobile Developer
+*Advanced Mobile Development Student*
 
+---
 
+Designed with ❤️ for NexTask.
