@@ -17,15 +17,11 @@ class SplashScreen extends StatelessWidget {
               const Spacer(flex: 2),
               // App Logo / Illustration Placeholder
               Container(
-                padding: const EdgeInsets.all(32),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: AppTheme.primaryColor.withOpacity(0.1),
-                ),
-                child: const Icon(
-                  Icons.task_alt_rounded,
-                  size: 100,
-                  color: AppTheme.primaryColor,
+                padding: const EdgeInsets.all(20),
+                child: Image.asset(
+                  'assets/welcome-img.png',
+                  height: 250, // Adjust height as needed
+                  fit: BoxFit.contain,
                 ),
               ),
               const SizedBox(height: 24),

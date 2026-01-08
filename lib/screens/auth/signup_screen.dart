@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../core/theme/app_theme.dart';
+import '../../providers/user_provider.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -19,13 +21,23 @@ class _SignupScreenState extends State<SignupScreen> {
     if (_formKey.currentState!.validate()) {
       setState(() => _isLoading = true);
       
-      // Simulate network delay
-      await Future.delayed(const Duration(milliseconds: 1500));
-      
-      if (mounted) {
-        setState(() => _isLoading = false);
-        // Navigate to Dashboard after successful signup
-        Navigator.pushReplacementNamed(context, '/dashboard');
+      try {
+        await Provider.of<UserProvider>(context, listen: false).register(
+          _usernameController.text,
+          _passwordController.text,
+        );
+        
+        if (mounted) {
+          setState(() => _isLoading = false);
+          Navigator.pushReplacementNamed(context, '/dashboard');
+        }
+      } catch (e) {
+        if (mounted) {
+          setState(() => _isLoading = false);
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(e.toString())),
+          );
+        }
       }
     }
   }
@@ -63,6 +75,11 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Image.asset(
+                    'assets/signup-img.png',
+                    height: 200,
+                  ),
+                  const SizedBox(height: 24),
                   const Text(
                     'Join NexTask',
                     textAlign: TextAlign.center,
